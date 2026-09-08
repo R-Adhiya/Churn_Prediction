@@ -1,0 +1,111 @@
+{
+    "original_rows": 7043,
+    "original_cols": 21,
+    "removed_columns": [
+        "customerID",
+        "Churn"
+    ],
+    "target_encoding": {
+        "No": 0,
+        "Yes": 1
+    },
+    "missing_value_treatment": {
+        "TotalCharges": "Replaced 11 blank space strings with 0.0 for new customers with tenure = 0."
+    },
+    "binary_encoding": {
+        "gender": {
+            "Female": 0,
+            "Male": 1
+        },
+        "Partner": {
+            "No": 0,
+            "Yes": 1
+        },
+        "Dependents": {
+            "No": 0,
+            "Yes": 1
+        },
+        "PhoneService": {
+            "No": 0,
+            "Yes": 1
+        },
+        "PaperlessBilling": {
+            "No": 0,
+            "Yes": 1
+        },
+        "SeniorCitizen": "Passthrough (already 0/1)"
+    },
+    "one_hot_encoded_columns": [
+        "MultipleLines",
+        "InternetService",
+        "OnlineSecurity",
+        "OnlineBackup",
+        "DeviceProtection",
+        "TechSupport",
+        "StreamingTV",
+        "StreamingMovies",
+        "Contract",
+        "PaymentMethod"
+    ],
+    "numerical_scaled_columns": [
+        "tenure",
+        "MonthlyCharges",
+        "TotalCharges",
+        "TenureYears",
+        "AverageMonthlySpend",
+        "TotalServicesCount"
+    ],
+    "engineered_features": [
+        {
+            "name": "TenureYears",
+            "formula": "tenure / 12.0",
+            "rationale": "Converts tenure from months to years for intuitive baseline comparison."
+        },
+        {
+            "name": "AverageMonthlySpend",
+            "formula": "TotalCharges / tenure (0 if tenure == 0)",
+            "rationale": "Captures effective average historical monthly spending rate per customer."
+        },
+        {
+            "name": "TotalServicesCount",
+            "formula": "Count of 'Yes' across 8 service add-on columns",
+            "rationale": "Quantifies customer ecosystem engagement and service stickiness."
+        }
+    ],
+    "split_sizes": {
+        "train": {
+            "rows": 4930,
+            "pct": 70.0,
+            "churn_rate": 0.2653
+        },
+        "val": {
+            "rows": 1056,
+            "pct": 15.0,
+            "churn_rate": 0.2652
+        },
+        "test": {
+            "rows": 1057,
+            "pct": 15.0,
+            "churn_rate": 0.2658
+        }
+    },
+    "final_feature_count": 43,
+    "leakage_checks": {
+        "customer_id_excluded": true,
+        "original_churn_excluded": true,
+        "target_excluded_from_X": true,
+        "test_data_untouched_during_fit": true,
+        "preprocessing_stats_fit_on_train_only": true,
+        "zero_overlapping_customer_ids": true
+    },
+    "generated_files": [
+        "data/processed/X_train.csv",
+        "data/processed/X_val.csv",
+        "data/processed/X_test.csv",
+        "data/processed/y_train.csv",
+        "data/processed/y_val.csv",
+        "data/processed/y_test.csv",
+        "data/processed/feature_names.json",
+        "models/preprocessor.joblib"
+    ]
+}
