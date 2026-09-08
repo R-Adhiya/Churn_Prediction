@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Raw datasets
+*.csv
+
+# Model artifacts
+*.joblib
+*.pkl
+
+# IDE
+.vscode/
+
+# Temporary files
+*.log
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
