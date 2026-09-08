@@ -1,0 +1,101 @@
+{
+    "phase": "Phase 3 - Baseline ML Models & Evaluation",
+    "models_evaluated": [
+        "Logistic Regression",
+        "Decision Tree",
+        "Random Forest",
+        "XGBoost"
+    ],
+    "validation_metrics": {
+        "Logistic Regression": {
+            "accuracy": 0.7405,
+            "precision": 0.5067,
+            "recall": 0.8143,
+            "f1_score": 0.6247,
+            "roc_auc": 0.8449,
+            "pr_auc": 0.6276
+        },
+        "Decision Tree": {
+            "accuracy": 0.7206,
+            "precision": 0.4749,
+            "recall": 0.5071,
+            "f1_score": 0.4905,
+            "roc_auc": 0.6546,
+            "pr_auc": 0.5572
+        },
+        "Random Forest": {
+            "accuracy": 0.7831,
+            "precision": 0.6123,
+            "recall": 0.4964,
+            "f1_score": 0.5483,
+            "roc_auc": 0.8148,
+            "pr_auc": 0.5903
+        },
+        "XGBoost": {
+            "accuracy": 0.7765,
+            "precision": 0.5932,
+            "recall": 0.5,
+            "f1_score": 0.5426,
+            "roc_auc": 0.8197,
+            "pr_auc": 0.5922
+        }
+    },
+    "train_metrics": {
+        "Logistic Regression": {
+            "accuracy": 0.7469,
+            "precision": 0.5147,
+            "recall": 0.805,
+            "f1_score": 0.6279,
+            "roc_auc": 0.8488,
+            "pr_auc": 0.6631
+        },
+        "Decision Tree": {
+            "accuracy": 0.998,
+            "precision": 1.0,
+            "recall": 0.9924,
+            "f1_score": 0.9962,
+            "roc_auc": 1.0,
+            "pr_auc": 1.0
+        },
+        "Random Forest": {
+            "accuracy": 0.998,
+            "precision": 0.9969,
+            "recall": 0.9954,
+            "f1_score": 0.9962,
+            "roc_auc": 1.0,
+            "pr_auc": 0.9999
+        },
+        "XGBoost": {
+            "accuracy": 0.96,
+            "precision": 0.9364,
+            "recall": 0.9113,
+            "f1_score": 0.9237,
+            "roc_auc": 0.9929,
+            "pr_auc": 0.9796
+        }
+    },
+    "overfitting_analysis": {
+        "Logistic Regression": {
+            "train_val_acc_diff": 0.0064,
+            "train_val_auc_diff": 0.0039,
+            "is_overfitted": false
+        },
+        "Decision Tree": {
+            "train_val_acc_diff": 0.2774,
+            "train_val_auc_diff": 0.3454,
+            "is_overfitted": true
+        },
+        "Random Forest": {
+            "train_val_acc_diff": 0.2149,
+            "train_val_auc_diff": 0.1852,
+            "is_overfitted": true
+        },
+        "XGBoost": {
+            "train_val_acc_diff": 0.1835,
+            "train_val_auc_diff": 0.1732,
+            "is_overfitted": true
+        }
+    },
+    "best_baseline_model": "Logistic Regression",
+    "best_model_rationale": "Highest validation ROC-AUC (0.8449), PR-AUC (0.6276), and Recall (0.8143). Provides superior class-imbalance handling and rank ordering."
+}
