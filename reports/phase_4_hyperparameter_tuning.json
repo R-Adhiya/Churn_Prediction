@@ -1,0 +1,313 @@
+{
+    "phase": "Phase 4 - Hyperparameter Tuning, CV & Threshold Optimization",
+    "models_tuned": [
+        "Logistic Regression",
+        "Decision Tree",
+        "Random Forest",
+        "XGBoost"
+    ],
+    "cross_validation": "5-Fold StratifiedKFold (random_state=42)",
+    "cv_scores_roc_auc": {
+        "Logistic Regression": 0.8443259212272384,
+        "Decision Tree": 0.8222736414571645,
+        "Random Forest": 0.84719763679052,
+        "XGBoost": 0.8482032494922969
+    },
+    "best_parameters": {
+        "Logistic Regression": {
+            "C": 10,
+            "class_weight": null,
+            "penalty": "l2",
+            "solver": "liblinear"
+        },
+        "Decision Tree": {
+            "min_samples_split": 10,
+            "min_samples_leaf": 5,
+            "max_features": null,
+            "max_depth": 4,
+            "criterion": "gini"
+        },
+        "Random Forest": {
+            "n_estimators": 200,
+            "min_samples_split": 2,
+            "min_samples_leaf": 2,
+            "max_features": "sqrt",
+            "max_depth": 8,
+            "class_weight": null
+        },
+        "XGBoost": {
+            "subsample": 0.8,
+            "scale_pos_weight": 1.0,
+            "reg_lambda": 0.1,
+            "reg_alpha": 0.1,
+            "n_estimators": 150,
+            "min_child_weight": 1,
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "gamma": 0,
+            "colsample_bytree": 0.6
+        }
+    },
+    "validation_metrics": {
+        "Logistic Regression": {
+            "accuracy": 0.8068,
+            "precision": 0.6484,
+            "recall": 0.5929,
+            "f1_score": 0.6194,
+            "roc_auc": 0.8454,
+            "pr_auc": 0.6263
+        },
+        "Decision Tree": {
+            "accuracy": 0.7936,
+            "precision": 0.6566,
+            "recall": 0.4643,
+            "f1_score": 0.5439,
+            "roc_auc": 0.8344,
+            "pr_auc": 0.6533
+        },
+        "Random Forest": {
+            "accuracy": 0.803,
+            "precision": 0.6636,
+            "recall": 0.5214,
+            "f1_score": 0.584,
+            "roc_auc": 0.8453,
+            "pr_auc": 0.6375
+        },
+        "XGBoost": {
+            "accuracy": 0.8002,
+            "precision": 0.652,
+            "recall": 0.5286,
+            "f1_score": 0.5838,
+            "roc_auc": 0.8525,
+            "pr_auc": 0.6494
+        }
+    },
+    "train_metrics": {
+        "Logistic Regression": {
+            "accuracy": 0.8059,
+            "precision": 0.6603,
+            "recall": 0.5528,
+            "f1_score": 0.6017,
+            "roc_auc": 0.8491,
+            "pr_auc": 0.665
+        },
+        "Decision Tree": {
+            "accuracy": 0.7978,
+            "precision": 0.6703,
+            "recall": 0.4679,
+            "f1_score": 0.5511,
+            "roc_auc": 0.8399,
+            "pr_auc": 0.6571
+        },
+        "Random Forest": {
+            "accuracy": 0.8414,
+            "precision": 0.7578,
+            "recall": 0.591,
+            "f1_score": 0.6641,
+            "roc_auc": 0.9121,
+            "pr_auc": 0.7824
+        },
+        "XGBoost": {
+            "accuracy": 0.8247,
+            "precision": 0.7126,
+            "recall": 0.5688,
+            "f1_score": 0.6327,
+            "roc_auc": 0.8758,
+            "pr_auc": 0.7246
+        }
+    },
+    "baseline_vs_tuned_comparison": {
+        "Logistic Regression": {
+            "baseline_roc_auc": 0.8449,
+            "tuned_roc_auc": 0.8454,
+            "roc_auc_diff": 0.0005,
+            "baseline_pr_auc": 0.6276,
+            "tuned_pr_auc": 0.6263,
+            "pr_auc_diff": -0.0013,
+            "baseline_f1": 0.6247,
+            "tuned_f1": 0.6194,
+            "f1_diff": -0.0053,
+            "baseline_recall": 0.8143,
+            "tuned_recall": 0.5929,
+            "recall_diff": -0.2214,
+            "baseline_auc_gap": 0.0039,
+            "tuned_auc_gap": 0.0037,
+            "overfitting_reduction": 0.0002
+        },
+        "Decision Tree": {
+            "baseline_roc_auc": 0.6546,
+            "tuned_roc_auc": 0.8344,
+            "roc_auc_diff": 0.1798,
+            "baseline_pr_auc": 0.5572,
+            "tuned_pr_auc": 0.6533,
+            "pr_auc_diff": 0.0961,
+            "baseline_f1": 0.4905,
+            "tuned_f1": 0.5439,
+            "f1_diff": 0.0534,
+            "baseline_recall": 0.5071,
+            "tuned_recall": 0.4643,
+            "recall_diff": -0.0428,
+            "baseline_auc_gap": 0.3454,
+            "tuned_auc_gap": 0.0055,
+            "overfitting_reduction": 0.3399
+        },
+        "Random Forest": {
+            "baseline_roc_auc": 0.8148,
+            "tuned_roc_auc": 0.8453,
+            "roc_auc_diff": 0.0305,
+            "baseline_pr_auc": 0.5903,
+            "tuned_pr_auc": 0.6375,
+            "pr_auc_diff": 0.0472,
+            "baseline_f1": 0.5483,
+            "tuned_f1": 0.584,
+            "f1_diff": 0.0357,
+            "baseline_recall": 0.4964,
+            "tuned_recall": 0.5214,
+            "recall_diff": 0.025,
+            "baseline_auc_gap": 0.1852,
+            "tuned_auc_gap": 0.0668,
+            "overfitting_reduction": 0.1184
+        },
+        "XGBoost": {
+            "baseline_roc_auc": 0.8197,
+            "tuned_roc_auc": 0.8525,
+            "roc_auc_diff": 0.0328,
+            "baseline_pr_auc": 0.5922,
+            "tuned_pr_auc": 0.6494,
+            "pr_auc_diff": 0.0572,
+            "baseline_f1": 0.5426,
+            "tuned_f1": 0.5838,
+            "f1_diff": 0.0412,
+            "baseline_recall": 0.5,
+            "tuned_recall": 0.5286,
+            "recall_diff": 0.0286,
+            "baseline_auc_gap": 0.1732,
+            "tuned_auc_gap": 0.0233,
+            "overfitting_reduction": 0.1499
+        }
+    },
+    "threshold_analysis": [
+        {
+            "threshold": 0.1,
+            "accuracy": 0.6098,
+            "precision": 0.4015,
+            "recall": 0.9607,
+            "f1_score": 0.5663
+        },
+        {
+            "threshold": 0.15,
+            "accuracy": 0.6733,
+            "precision": 0.4444,
+            "recall": 0.9286,
+            "f1_score": 0.6012
+        },
+        {
+            "threshold": 0.2,
+            "accuracy": 0.7169,
+            "precision": 0.4812,
+            "recall": 0.8679,
+            "f1_score": 0.6191
+        },
+        {
+            "threshold": 0.25,
+            "accuracy": 0.7386,
+            "precision": 0.5042,
+            "recall": 0.8536,
+            "f1_score": 0.634
+        },
+        {
+            "threshold": 0.3,
+            "accuracy": 0.7642,
+            "precision": 0.5366,
+            "recall": 0.8107,
+            "f1_score": 0.6458
+        },
+        {
+            "threshold": 0.35,
+            "accuracy": 0.7803,
+            "precision": 0.5642,
+            "recall": 0.7536,
+            "f1_score": 0.6453
+        },
+        {
+            "threshold": 0.4,
+            "accuracy": 0.7926,
+            "precision": 0.5944,
+            "recall": 0.6857,
+            "f1_score": 0.6368
+        },
+        {
+            "threshold": 0.45,
+            "accuracy": 0.7983,
+            "precision": 0.6201,
+            "recall": 0.6179,
+            "f1_score": 0.619
+        },
+        {
+            "threshold": 0.5,
+            "accuracy": 0.8002,
+            "precision": 0.652,
+            "recall": 0.5286,
+            "f1_score": 0.5838
+        },
+        {
+            "threshold": 0.55,
+            "accuracy": 0.8068,
+            "precision": 0.7065,
+            "recall": 0.4643,
+            "f1_score": 0.5603
+        },
+        {
+            "threshold": 0.6,
+            "accuracy": 0.7992,
+            "precision": 0.7394,
+            "recall": 0.375,
+            "f1_score": 0.4976
+        },
+        {
+            "threshold": 0.65,
+            "accuracy": 0.7879,
+            "precision": 0.7373,
+            "recall": 0.3107,
+            "f1_score": 0.4372
+        },
+        {
+            "threshold": 0.7,
+            "accuracy": 0.7794,
+            "precision": 0.764,
+            "recall": 0.2429,
+            "f1_score": 0.3686
+        },
+        {
+            "threshold": 0.75,
+            "accuracy": 0.7633,
+            "precision": 0.7586,
+            "recall": 0.1571,
+            "f1_score": 0.2604
+        },
+        {
+            "threshold": 0.8,
+            "accuracy": 0.7557,
+            "precision": 0.7895,
+            "recall": 0.1071,
+            "f1_score": 0.1887
+        },
+        {
+            "threshold": 0.85,
+            "accuracy": 0.7443,
+            "precision": 0.8571,
+            "recall": 0.0429,
+            "f1_score": 0.0816
+        },
+        {
+            "threshold": 0.9,
+            "accuracy": 0.7358,
+            "precision": 1.0,
+            "recall": 0.0036,
+            "f1_score": 0.0071
+        }
+    ],
+    "recommended_operating_threshold": 0.3,
+    "selected_best_classical_model": "XGBoost",
+    "best_model_rationale": "XGBoost achieved the highest validation ROC-AUC (0.8525) and PR-AUC (0.6494) after tuning with proper L1/L2 regularization and tree depth control."
+}

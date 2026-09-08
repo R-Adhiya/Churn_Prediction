@@ -1,0 +1,55 @@
+{
+    "Logistic Regression": {
+        "best_parameters": {
+            "C": 10,
+            "class_weight": null,
+            "penalty": "l2",
+            "solver": "liblinear"
+        },
+        "5fold_cv_roc_auc": 0.8443259212272384,
+        "validation_roc_auc": 0.8454,
+        "validation_pr_auc": 0.6263
+    },
+    "Decision Tree": {
+        "best_parameters": {
+            "min_samples_split": 10,
+            "min_samples_leaf": 5,
+            "max_features": null,
+            "max_depth": 4,
+            "criterion": "gini"
+        },
+        "5fold_cv_roc_auc": 0.8222736414571645,
+        "validation_roc_auc": 0.8344,
+        "validation_pr_auc": 0.6533
+    },
+    "Random Forest": {
+        "best_parameters": {
+            "n_estimators": 200,
+            "min_samples_split": 2,
+            "min_samples_leaf": 2,
+            "max_features": "sqrt",
+            "max_depth": 8,
+            "class_weight": null
+        },
+        "5fold_cv_roc_auc": 0.84719763679052,
+        "validation_roc_auc": 0.8453,
+        "validation_pr_auc": 0.6375
+    },
+    "XGBoost": {
+        "best_parameters": {
+            "subsample": 0.8,
+            "scale_pos_weight": 1.0,
+            "reg_lambda": 0.1,
+            "reg_alpha": 0.1,
+            "n_estimators": 150,
+            "min_child_weight": 1,
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "gamma": 0,
+            "colsample_bytree": 0.6
+        },
+        "5fold_cv_roc_auc": 0.8482032494922969,
+        "validation_roc_auc": 0.8525,
+        "validation_pr_auc": 0.6494
+    }
+}
