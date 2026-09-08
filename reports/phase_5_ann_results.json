@@ -1,0 +1,193 @@
+{
+    "phase": "Phase 5 - Artificial Neural Network (ANN) Development & Comparison",
+    "ann_architecture_summary": {
+        "input_features": 43,
+        "total_parameters": 5825,
+        "epochs_trained": 30,
+        "best_epoch": 20,
+        "best_val_loss": 0.5006
+    },
+    "ann_validation_metrics_default_t50": {
+        "accuracy": 0.7405,
+        "precision": 0.5067,
+        "recall": 0.8143,
+        "f1_score": 0.6247,
+        "roc_auc": 0.842,
+        "pr_auc": 0.6344
+    },
+    "ann_train_metrics": {
+        "accuracy": 0.7698,
+        "precision": 0.5442,
+        "recall": 0.8142,
+        "f1_score": 0.6524,
+        "roc_auc": 0.8714,
+        "pr_auc": 0.704
+    },
+    "ann_generalization_auc_gap": 0.0294,
+    "ann_threshold_analysis": [
+        {
+            "threshold": 0.1,
+            "accuracy": 0.4915,
+            "precision": 0.3404,
+            "recall": 0.9786,
+            "f1_score": 0.5051
+        },
+        {
+            "threshold": 0.15,
+            "accuracy": 0.5369,
+            "precision": 0.3609,
+            "recall": 0.9679,
+            "f1_score": 0.5257
+        },
+        {
+            "threshold": 0.2,
+            "accuracy": 0.5814,
+            "precision": 0.3843,
+            "recall": 0.9607,
+            "f1_score": 0.549
+        },
+        {
+            "threshold": 0.25,
+            "accuracy": 0.6155,
+            "precision": 0.4045,
+            "recall": 0.9536,
+            "f1_score": 0.5681
+        },
+        {
+            "threshold": 0.3,
+            "accuracy": 0.6477,
+            "precision": 0.4256,
+            "recall": 0.9393,
+            "f1_score": 0.5857
+        },
+        {
+            "threshold": 0.35,
+            "accuracy": 0.6581,
+            "precision": 0.4312,
+            "recall": 0.9071,
+            "f1_score": 0.5846
+        },
+        {
+            "threshold": 0.4,
+            "accuracy": 0.6932,
+            "precision": 0.4596,
+            "recall": 0.8929,
+            "f1_score": 0.6068
+        },
+        {
+            "threshold": 0.45,
+            "accuracy": 0.7169,
+            "precision": 0.4807,
+            "recall": 0.8429,
+            "f1_score": 0.6122
+        },
+        {
+            "threshold": 0.5,
+            "accuracy": 0.7405,
+            "precision": 0.5067,
+            "recall": 0.8143,
+            "f1_score": 0.6247
+        },
+        {
+            "threshold": 0.55,
+            "accuracy": 0.7557,
+            "precision": 0.5271,
+            "recall": 0.7643,
+            "f1_score": 0.6239
+        },
+        {
+            "threshold": 0.6,
+            "accuracy": 0.7765,
+            "precision": 0.5615,
+            "recall": 0.7179,
+            "f1_score": 0.6301
+        },
+        {
+            "threshold": 0.65,
+            "accuracy": 0.7898,
+            "precision": 0.5948,
+            "recall": 0.65,
+            "f1_score": 0.6212
+        },
+        {
+            "threshold": 0.7,
+            "accuracy": 0.7936,
+            "precision": 0.6202,
+            "recall": 0.5714,
+            "f1_score": 0.5948
+        },
+        {
+            "threshold": 0.75,
+            "accuracy": 0.8021,
+            "precision": 0.6878,
+            "recall": 0.4643,
+            "f1_score": 0.5544
+        },
+        {
+            "threshold": 0.8,
+            "accuracy": 0.8011,
+            "precision": 0.75,
+            "recall": 0.375,
+            "f1_score": 0.5
+        },
+        {
+            "threshold": 0.85,
+            "accuracy": 0.786,
+            "precision": 0.77,
+            "recall": 0.275,
+            "f1_score": 0.4053
+        },
+        {
+            "threshold": 0.9,
+            "accuracy": 0.7566,
+            "precision": 0.7347,
+            "recall": 0.1286,
+            "f1_score": 0.2188
+        }
+    ],
+    "recommended_ann_operating_threshold": 0.6,
+    "model_comparison_validation_set": {
+        "XGBoost": {
+            "accuracy": 0.8002,
+            "precision": 0.652,
+            "recall": 0.5286,
+            "f1_score": 0.5838,
+            "roc_auc": 0.8525,
+            "pr_auc": 0.6494
+        },
+        "Logistic Regression": {
+            "accuracy": 0.8068,
+            "precision": 0.6484,
+            "recall": 0.5929,
+            "f1_score": 0.6194,
+            "roc_auc": 0.8454,
+            "pr_auc": 0.6263
+        },
+        "Random Forest": {
+            "accuracy": 0.803,
+            "precision": 0.6636,
+            "recall": 0.5214,
+            "f1_score": 0.584,
+            "roc_auc": 0.8453,
+            "pr_auc": 0.6375
+        },
+        "ANN (Deep Learning)": {
+            "accuracy": 0.7405,
+            "precision": 0.5067,
+            "recall": 0.8143,
+            "f1_score": 0.6247,
+            "roc_auc": 0.842,
+            "pr_auc": 0.6344
+        },
+        "Decision Tree": {
+            "accuracy": 0.7936,
+            "precision": 0.6566,
+            "recall": 0.4643,
+            "f1_score": 0.5439,
+            "roc_auc": 0.8344,
+            "pr_auc": 0.6533
+        }
+    },
+    "best_overall_validation_model": "XGBoost",
+    "model_comparison_summary": "The best overall validation candidate by ROC-AUC is XGBoost (ROC-AUC = 0.8525). ANN achieved ROC-AUC = 0.8420 and PR-AUC = 0.6344 with strong generalization (AUC gap = +0.0294)."
+}
