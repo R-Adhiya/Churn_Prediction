@@ -1,0 +1,309 @@
+{
+    "phase": 6,
+    "model": "XGBoost (Phase 4 Tuned)",
+    "explainer": "TreeExplainer",
+    "feature_count": 43,
+    "sample_size": 4930,
+    "official_threshold": 0.3,
+    "test_set_used": false,
+    "top_features": [
+        {
+            "rank": 1,
+            "feature": "Contract_Month-to-month",
+            "mean_abs_shap": 0.5708,
+            "mean_shap": -0.0652,
+            "positive_impact_count": 2704,
+            "negative_impact_count": 2226
+        },
+        {
+            "rank": 2,
+            "feature": "tenure",
+            "mean_abs_shap": 0.4018,
+            "mean_shap": -0.137,
+            "positive_impact_count": 1647,
+            "negative_impact_count": 3283
+        },
+        {
+            "rank": 3,
+            "feature": "OnlineSecurity_No",
+            "mean_abs_shap": 0.2469,
+            "mean_shap": -0.0488,
+            "positive_impact_count": 2439,
+            "negative_impact_count": 2491
+        },
+        {
+            "rank": 4,
+            "feature": "TechSupport_No",
+            "mean_abs_shap": 0.1985,
+            "mean_shap": -0.0336,
+            "positive_impact_count": 2411,
+            "negative_impact_count": 2519
+        },
+        {
+            "rank": 5,
+            "feature": "InternetService_Fiber optic",
+            "mean_abs_shap": 0.1851,
+            "mean_shap": -0.025,
+            "positive_impact_count": 2177,
+            "negative_impact_count": 2753
+        },
+        {
+            "rank": 6,
+            "feature": "PaymentMethod_Electronic check",
+            "mean_abs_shap": 0.155,
+            "mean_shap": -0.0334,
+            "positive_impact_count": 1654,
+            "negative_impact_count": 3276
+        },
+        {
+            "rank": 7,
+            "feature": "Contract_Two year",
+            "mean_abs_shap": 0.1523,
+            "mean_shap": -0.0399,
+            "positive_impact_count": 3738,
+            "negative_impact_count": 1192
+        },
+        {
+            "rank": 8,
+            "feature": "PaperlessBilling",
+            "mean_abs_shap": 0.1512,
+            "mean_shap": -0.023,
+            "positive_impact_count": 2920,
+            "negative_impact_count": 2010
+        },
+        {
+            "rank": 9,
+            "feature": "MonthlyCharges",
+            "mean_abs_shap": 0.1401,
+            "mean_shap": -0.0213,
+            "positive_impact_count": 1697,
+            "negative_impact_count": 3233
+        },
+        {
+            "rank": 10,
+            "feature": "AverageMonthlySpend",
+            "mean_abs_shap": 0.1261,
+            "mean_shap": -0.0245,
+            "positive_impact_count": 1360,
+            "negative_impact_count": 3570
+        }
+    ],
+    "top_5_features": [
+        "Contract_Month-to-month",
+        "tenure",
+        "OnlineSecurity_No",
+        "TechSupport_No",
+        "InternetService_Fiber optic"
+    ],
+    "quality_checks": {
+        "no_nan": true,
+        "no_inf": true,
+        "feature_count_equals_43": true,
+        "feature_names_aligned": true,
+        "train_sample_count_aligned": true,
+        "val_sample_count_aligned": true,
+        "additive_margin_relationship_holds": true,
+        "test_set_untouched": true
+    },
+    "representative_customers": [
+        {
+            "risk_category": "high_risk",
+            "label": "High Risk Customer",
+            "validation_row_index": 174,
+            "customer_id": "1069-XAIEM",
+            "predicted_probability": 0.9135,
+            "official_threshold": 0.3,
+            "predicted_class": 1,
+            "risk_classification": "Higher predicted churn risk",
+            "top_positive_contributors": [
+                {
+                    "feature": "tenure",
+                    "feature_value": -1.277,
+                    "shap_value": 0.8487
+                },
+                {
+                    "feature": "Contract_Month-to-month",
+                    "feature_value": 1.0,
+                    "shap_value": 0.5799
+                },
+                {
+                    "feature": "OnlineSecurity_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.2348
+                },
+                {
+                    "feature": "TenureYears",
+                    "feature_value": -1.277,
+                    "shap_value": 0.2318
+                },
+                {
+                    "feature": "TechSupport_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.2108
+                }
+            ],
+            "top_negative_contributors": [
+                {
+                    "feature": "Contract_One year",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0193
+                },
+                {
+                    "feature": "StreamingTV_Yes",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0143
+                },
+                {
+                    "feature": "gender",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0109
+                },
+                {
+                    "feature": "PhoneService",
+                    "feature_value": 1.0,
+                    "shap_value": -0.0048
+                },
+                {
+                    "feature": "MultipleLines_No phone service",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0023
+                }
+            ],
+            "human_readable_explanation": "Predicted Churn Probability: 91.4%\nOfficial Operating Threshold: 0.30\nRisk Classification: Higher predicted churn risk (Class 1)\n\nTop factors increasing predicted churn risk:\n  \u2022 tenure (val = -1.277): SHAP contribution +0.8487\n  \u2022 Contract_Month-to-month (val = 1.0): SHAP contribution +0.5799\n  \u2022 OnlineSecurity_No (val = 1.0): SHAP contribution +0.2348\n\nTop factors reducing predicted churn risk:\n  \u2022 Contract_One year (val = 0.0): SHAP contribution -0.0193\n  \u2022 StreamingTV_Yes (val = 0.0): SHAP contribution -0.0143\n  \u2022 gender (val = 0.0): SHAP contribution -0.0109\n",
+            "waterfall_plot_path": "reports/phase_6_plots/shap_waterfall_high_risk.png"
+        },
+        {
+            "risk_category": "medium_risk",
+            "label": "Medium Risk (Borderline) Customer",
+            "validation_row_index": 496,
+            "customer_id": "7733-UDMTP",
+            "predicted_probability": 0.3002,
+            "official_threshold": 0.3,
+            "predicted_class": 1,
+            "risk_classification": "Higher predicted churn risk",
+            "top_positive_contributors": [
+                {
+                    "feature": "Contract_Month-to-month",
+                    "feature_value": 1.0,
+                    "shap_value": 0.3564
+                },
+                {
+                    "feature": "PaymentMethod_Electronic check",
+                    "feature_value": 1.0,
+                    "shap_value": 0.2104
+                },
+                {
+                    "feature": "OnlineSecurity_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.1727
+                },
+                {
+                    "feature": "TechSupport_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.1718
+                },
+                {
+                    "feature": "PaperlessBilling",
+                    "feature_value": 1.0,
+                    "shap_value": 0.1163
+                }
+            ],
+            "top_negative_contributors": [
+                {
+                    "feature": "tenure",
+                    "feature_value": 0.9953,
+                    "shap_value": -0.6515
+                },
+                {
+                    "feature": "InternetService_Fiber optic",
+                    "feature_value": 0.0,
+                    "shap_value": -0.2422
+                },
+                {
+                    "feature": "TenureYears",
+                    "feature_value": 0.9953,
+                    "shap_value": -0.1647
+                },
+                {
+                    "feature": "OnlineBackup_No",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0783
+                },
+                {
+                    "feature": "AverageMonthlySpend",
+                    "feature_value": -0.3489,
+                    "shap_value": -0.0533
+                }
+            ],
+            "human_readable_explanation": "Predicted Churn Probability: 30.0%\nOfficial Operating Threshold: 0.30\nRisk Classification: Higher predicted churn risk (Class 1)\n\nTop factors increasing predicted churn risk:\n  \u2022 Contract_Month-to-month (val = 1.0): SHAP contribution +0.3564\n  \u2022 PaymentMethod_Electronic check (val = 1.0): SHAP contribution +0.2104\n  \u2022 OnlineSecurity_No (val = 1.0): SHAP contribution +0.1727\n\nTop factors reducing predicted churn risk:\n  \u2022 tenure (val = 0.9953): SHAP contribution -0.6515\n  \u2022 InternetService_Fiber optic (val = 0.0): SHAP contribution -0.2422\n  \u2022 TenureYears (val = 0.9953): SHAP contribution -0.1647\n",
+            "waterfall_plot_path": "reports/phase_6_plots/shap_waterfall_medium_risk.png"
+        },
+        {
+            "risk_category": "low_risk",
+            "label": "Low Risk Customer",
+            "validation_row_index": 671,
+            "customer_id": "5787-KXGIY",
+            "predicted_probability": 0.0053,
+            "official_threshold": 0.3,
+            "predicted_class": 0,
+            "risk_classification": "Lower predicted churn risk",
+            "top_positive_contributors": [
+                {
+                    "feature": "gender",
+                    "feature_value": 1.0,
+                    "shap_value": 0.0428
+                },
+                {
+                    "feature": "Dependents",
+                    "feature_value": 0.0,
+                    "shap_value": 0.0176
+                },
+                {
+                    "feature": "MultipleLines_Yes",
+                    "feature_value": 0.0,
+                    "shap_value": 0.0103
+                },
+                {
+                    "feature": "PaymentMethod_Credit card (automatic)",
+                    "feature_value": 1.0,
+                    "shap_value": 0.0089
+                },
+                {
+                    "feature": "StreamingMovies_No",
+                    "feature_value": 0.0,
+                    "shap_value": 0.0079
+                }
+            ],
+            "top_negative_contributors": [
+                {
+                    "feature": "Contract_Month-to-month",
+                    "feature_value": 0.0,
+                    "shap_value": -0.77
+                },
+                {
+                    "feature": "tenure",
+                    "feature_value": 1.604,
+                    "shap_value": -0.6477
+                },
+                {
+                    "feature": "MonthlyCharges",
+                    "feature_value": -1.5096,
+                    "shap_value": -0.4574
+                },
+                {
+                    "feature": "Contract_Two year",
+                    "feature_value": 1.0,
+                    "shap_value": -0.3823
+                },
+                {
+                    "feature": "OnlineSecurity_No",
+                    "feature_value": 0.0,
+                    "shap_value": -0.3132
+                }
+            ],
+            "human_readable_explanation": "Predicted Churn Probability: 0.5%\nOfficial Operating Threshold: 0.30\nRisk Classification: Lower predicted churn risk (Class 0)\n\nTop factors increasing predicted churn risk:\n  \u2022 gender (val = 1.0): SHAP contribution +0.0428\n  \u2022 Dependents (val = 0.0): SHAP contribution +0.0176\n  \u2022 MultipleLines_Yes (val = 0.0): SHAP contribution +0.0103\n\nTop factors reducing predicted churn risk:\n  \u2022 Contract_Month-to-month (val = 0.0): SHAP contribution -0.7700\n  \u2022 tenure (val = 1.604): SHAP contribution -0.6477\n  \u2022 MonthlyCharges (val = -1.5096): SHAP contribution -0.4574\n",
+            "waterfall_plot_path": "reports/phase_6_plots/shap_waterfall_low_risk.png"
+        }
+    ],
+    "summary": "SHAP TreeExplainer analysis performed on 4930 training samples. The top feature driving predicted churn risk is 'Contract_Month-to-month' (mean |SHAP| = 0.5708), followed by 'tenure' (0.4018) and 'OnlineSecurity_No' (0.2469). Test set (X_test) remained 100% UNTOUCHED."
+}
