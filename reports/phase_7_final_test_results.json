@@ -1,0 +1,63 @@
+{
+    "phase": 7,
+    "final_model": "XGBoost Classifier (Phase 4 Tuned)",
+    "model_selection_basis": "Validation Set ROC-AUC (Phase 4)",
+    "test_set_used_for_selection": false,
+    "test_set_used_for_threshold_optimization": false,
+    "official_threshold": 0.3,
+    "test_sample_count": 1057,
+    "feature_count": 43,
+    "metrics": {
+        "accuracy": 0.7682,
+        "precision": 0.5476,
+        "recall": 0.7367,
+        "f1": 0.6282,
+        "roc_auc": 0.8408,
+        "pr_auc": 0.6639
+    },
+    "confusion_matrix": {
+        "tn": 605,
+        "fp": 171,
+        "fn": 74,
+        "tp": 207,
+        "total_actual_no_churn": 776,
+        "total_actual_churn": 281,
+        "total_predicted_no_churn": 679,
+        "total_predicted_churn": 378
+    },
+    "validation_vs_test": {
+        "validation": {
+            "accuracy": 0.7642,
+            "precision": 0.5366,
+            "recall": 0.8107,
+            "f1": 0.6458,
+            "roc_auc": 0.8525,
+            "pr_auc": 0.6494
+        },
+        "test": {
+            "accuracy": 0.7682,
+            "precision": 0.5476,
+            "recall": 0.7367,
+            "f1": 0.6282,
+            "roc_auc": 0.8408,
+            "pr_auc": 0.6639
+        },
+        "roc_auc_difference": 0.0117,
+        "abs_roc_auc_difference": 0.0117,
+        "pr_auc_difference": -0.0145,
+        "generalization_assessment": "The test performance is broadly consistent with validation performance, demonstrating robust generalization with a minor ROC-AUC gap of +0.0117."
+    },
+    "integrity_checks": {
+        "x_test_row_count_equals_1057": true,
+        "x_test_feature_count_equals_43": true,
+        "y_test_row_count_equals_1057": true,
+        "no_nan_values": true,
+        "no_inf_values": true,
+        "feature_names_match_schema": true,
+        "x_and_y_lengths_match": true,
+        "official_threshold_locked_at_0_30": true,
+        "test_data_unused_for_training": true,
+        "test_data_unused_for_threshold_tuning": true
+    },
+    "summary": "Final evaluation on untouched 15% test set (1,057 records). Achieved Test ROC-AUC = 0.8408 and Test PR-AUC = 0.6639. At official operating threshold t = 0.30: Accuracy = 0.7682, Precision = 0.5476, Recall = 0.7367, F1-Score = 0.6282. Generalization AUC gap (Val ROC-AUC - Test ROC-AUC) = +0.0117."
+}
