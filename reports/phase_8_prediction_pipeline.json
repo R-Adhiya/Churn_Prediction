@@ -1,0 +1,267 @@
+{
+    "phase": 8,
+    "pipeline_name": "ChurnPredictionPipeline",
+    "model": "XGBoost Classifier (Phase 4 Tuned)",
+    "preprocessor": "ColumnTransformer (Phase 2 Fitted)",
+    "feature_count": 43,
+    "locked_threshold": 0.3,
+    "risk_levels": {
+        "Low": "probability < 0.20",
+        "Medium": "0.20 <= probability < 0.50",
+        "High": "probability >= 0.50"
+    },
+    "consistency_test": {
+        "max_absolute_probability_difference": 5e-05,
+        "consistency_test_passed": true
+    },
+    "integrity_checks": {
+        "model_loaded": true,
+        "preprocessor_loaded": true,
+        "feature_schema_aligned": true,
+        "exactly_43_features": true,
+        "no_nan_or_inf": true,
+        "probability_in_range_0_1": true,
+        "threshold_locked_at_0_30": true,
+        "shap_explanation_functional": true,
+        "consistency_test": true
+    },
+    "representative_predictions": [
+        {
+            "customer_id": "1069-XAIEM",
+            "churn_probability": 0.9135,
+            "prediction": 1,
+            "official_threshold": 0.3,
+            "risk_level": "High",
+            "risk_classification": "Higher predicted churn risk",
+            "top_risk_factors": [
+                {
+                    "feature": "tenure",
+                    "feature_value": -1.277,
+                    "shap_value": 0.8487,
+                    "interpretation": "'tenure' is associated with higher predicted churn risk in the model (SHAP +0.8487)."
+                },
+                {
+                    "feature": "Contract_Month-to-month",
+                    "feature_value": 1.0,
+                    "shap_value": 0.5799,
+                    "interpretation": "'Contract_Month-to-month' is associated with higher predicted churn risk in the model (SHAP +0.5799)."
+                },
+                {
+                    "feature": "OnlineSecurity_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.2348,
+                    "interpretation": "'OnlineSecurity_No' is associated with higher predicted churn risk in the model (SHAP +0.2348)."
+                },
+                {
+                    "feature": "TenureYears",
+                    "feature_value": -1.277,
+                    "shap_value": 0.2318,
+                    "interpretation": "'TenureYears' is associated with higher predicted churn risk in the model (SHAP +0.2318)."
+                },
+                {
+                    "feature": "TechSupport_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.2108,
+                    "interpretation": "'TechSupport_No' is associated with higher predicted churn risk in the model (SHAP +0.2108)."
+                }
+            ],
+            "protective_factors": [
+                {
+                    "feature": "Contract_One year",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0193,
+                    "interpretation": "'Contract_One year' is associated with lower predicted churn risk in the model (SHAP -0.0193)."
+                },
+                {
+                    "feature": "StreamingTV_Yes",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0143,
+                    "interpretation": "'StreamingTV_Yes' is associated with lower predicted churn risk in the model (SHAP -0.0143)."
+                },
+                {
+                    "feature": "gender",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0109,
+                    "interpretation": "'gender' is associated with lower predicted churn risk in the model (SHAP -0.0109)."
+                },
+                {
+                    "feature": "PhoneService",
+                    "feature_value": 1.0,
+                    "shap_value": -0.0048,
+                    "interpretation": "'PhoneService' is associated with lower predicted churn risk in the model (SHAP -0.0048)."
+                },
+                {
+                    "feature": "MultipleLines_No phone service",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0023,
+                    "interpretation": "'MultipleLines_No phone service' is associated with lower predicted churn risk in the model (SHAP -0.0023)."
+                }
+            ],
+            "human_readable_explanation": "Customer ID: 1069-XAIEM\nPredicted Churn Probability: 91.4%\nOfficial Decision Threshold: 0.30\nPrediction: Class 1 (Higher predicted churn risk)\nPresentation Risk Category: High\n\nTop factors increasing predicted churn risk:\n  \u2022 tenure (val = -1.277): SHAP contribution +0.8487\n  \u2022 Contract_Month-to-month (val = 1.0): SHAP contribution +0.5799\n  \u2022 OnlineSecurity_No (val = 1.0): SHAP contribution +0.2348\n\nTop factors reducing predicted churn risk:\n  \u2022 Contract_One year (val = 0.0): SHAP contribution -0.0193\n  \u2022 StreamingTV_Yes (val = 0.0): SHAP contribution -0.0143\n  \u2022 gender (val = 0.0): SHAP contribution -0.0109\n",
+            "retention_recommendations": [
+                "Offer an annual or 2-year contract incentive (15-20% bill discount) to transition from month-to-month billing.",
+                "Promote automated payment enrollment (Credit Card / Auto-Bank Transfer) with a recurring $5 monthly bill credit.",
+                "Offer a complimentary 6-month cybersecurity & online security add-on package to increase service stickiness.",
+                "Provide a promotional priority 24/7 technical support bundle to improve service experience.",
+                "Review high-cost fiber optic tier and offer a customized loyalty bundle discount or speed upgrade credit.",
+                "Trigger an early-tenure customer success check-in and dedicated onboarding review."
+            ]
+        },
+        {
+            "customer_id": "7733-UDMTP",
+            "churn_probability": 0.3002,
+            "prediction": 1,
+            "official_threshold": 0.3,
+            "risk_level": "Medium",
+            "risk_classification": "Higher predicted churn risk",
+            "top_risk_factors": [
+                {
+                    "feature": "Contract_Month-to-month",
+                    "feature_value": 1.0,
+                    "shap_value": 0.3564,
+                    "interpretation": "'Contract_Month-to-month' is associated with higher predicted churn risk in the model (SHAP +0.3564)."
+                },
+                {
+                    "feature": "PaymentMethod_Electronic check",
+                    "feature_value": 1.0,
+                    "shap_value": 0.2104,
+                    "interpretation": "'PaymentMethod_Electronic check' is associated with higher predicted churn risk in the model (SHAP +0.2104)."
+                },
+                {
+                    "feature": "OnlineSecurity_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.1727,
+                    "interpretation": "'OnlineSecurity_No' is associated with higher predicted churn risk in the model (SHAP +0.1727)."
+                },
+                {
+                    "feature": "TechSupport_No",
+                    "feature_value": 1.0,
+                    "shap_value": 0.1718,
+                    "interpretation": "'TechSupport_No' is associated with higher predicted churn risk in the model (SHAP +0.1718)."
+                },
+                {
+                    "feature": "PaperlessBilling",
+                    "feature_value": 1.0,
+                    "shap_value": 0.1163,
+                    "interpretation": "'PaperlessBilling' is associated with higher predicted churn risk in the model (SHAP +0.1163)."
+                }
+            ],
+            "protective_factors": [
+                {
+                    "feature": "tenure",
+                    "feature_value": 0.9953,
+                    "shap_value": -0.6515,
+                    "interpretation": "'tenure' is associated with lower predicted churn risk in the model (SHAP -0.6515)."
+                },
+                {
+                    "feature": "InternetService_Fiber optic",
+                    "feature_value": 0.0,
+                    "shap_value": -0.2422,
+                    "interpretation": "'InternetService_Fiber optic' is associated with lower predicted churn risk in the model (SHAP -0.2422)."
+                },
+                {
+                    "feature": "TenureYears",
+                    "feature_value": 0.9953,
+                    "shap_value": -0.1647,
+                    "interpretation": "'TenureYears' is associated with lower predicted churn risk in the model (SHAP -0.1647)."
+                },
+                {
+                    "feature": "OnlineBackup_No",
+                    "feature_value": 0.0,
+                    "shap_value": -0.0783,
+                    "interpretation": "'OnlineBackup_No' is associated with lower predicted churn risk in the model (SHAP -0.0783)."
+                },
+                {
+                    "feature": "AverageMonthlySpend",
+                    "feature_value": -0.3489,
+                    "shap_value": -0.0533,
+                    "interpretation": "'AverageMonthlySpend' is associated with lower predicted churn risk in the model (SHAP -0.0533)."
+                }
+            ],
+            "human_readable_explanation": "Customer ID: 7733-UDMTP\nPredicted Churn Probability: 30.0%\nOfficial Decision Threshold: 0.30\nPrediction: Class 1 (Higher predicted churn risk)\nPresentation Risk Category: Medium\n\nTop factors increasing predicted churn risk:\n  \u2022 Contract_Month-to-month (val = 1.0): SHAP contribution +0.3564\n  \u2022 PaymentMethod_Electronic check (val = 1.0): SHAP contribution +0.2104\n  \u2022 OnlineSecurity_No (val = 1.0): SHAP contribution +0.1727\n\nTop factors reducing predicted churn risk:\n  \u2022 tenure (val = 0.9953): SHAP contribution -0.6515\n  \u2022 InternetService_Fiber optic (val = 0.0): SHAP contribution -0.2422\n  \u2022 TenureYears (val = 0.9953): SHAP contribution -0.1647\n",
+            "retention_recommendations": [
+                "Offer an annual or 2-year contract incentive (15-20% bill discount) to transition from month-to-month billing.",
+                "Promote automated payment enrollment (Credit Card / Auto-Bank Transfer) with a recurring $5 monthly bill credit.",
+                "Offer a complimentary 6-month cybersecurity & online security add-on package to increase service stickiness.",
+                "Provide a promotional priority 24/7 technical support bundle to improve service experience."
+            ]
+        },
+        {
+            "customer_id": "5787-KXGIY",
+            "churn_probability": 0.0053,
+            "prediction": 0,
+            "official_threshold": 0.3,
+            "risk_level": "Low",
+            "risk_classification": "Lower predicted churn risk",
+            "top_risk_factors": [
+                {
+                    "feature": "gender",
+                    "feature_value": 1.0,
+                    "shap_value": 0.0428,
+                    "interpretation": "'gender' is associated with higher predicted churn risk in the model (SHAP +0.0428)."
+                },
+                {
+                    "feature": "Dependents",
+                    "feature_value": 0.0,
+                    "shap_value": 0.0176,
+                    "interpretation": "'Dependents' is associated with higher predicted churn risk in the model (SHAP +0.0176)."
+                },
+                {
+                    "feature": "MultipleLines_Yes",
+                    "feature_value": 0.0,
+                    "shap_value": 0.0103,
+                    "interpretation": "'MultipleLines_Yes' is associated with higher predicted churn risk in the model (SHAP +0.0103)."
+                },
+                {
+                    "feature": "PaymentMethod_Credit card (automatic)",
+                    "feature_value": 1.0,
+                    "shap_value": 0.0089,
+                    "interpretation": "'PaymentMethod_Credit card (automatic)' is associated with higher predicted churn risk in the model (SHAP +0.0089)."
+                },
+                {
+                    "feature": "StreamingMovies_No",
+                    "feature_value": 0.0,
+                    "shap_value": 0.0079,
+                    "interpretation": "'StreamingMovies_No' is associated with higher predicted churn risk in the model (SHAP +0.0079)."
+                }
+            ],
+            "protective_factors": [
+                {
+                    "feature": "Contract_Month-to-month",
+                    "feature_value": 0.0,
+                    "shap_value": -0.77,
+                    "interpretation": "'Contract_Month-to-month' is associated with lower predicted churn risk in the model (SHAP -0.7700)."
+                },
+                {
+                    "feature": "tenure",
+                    "feature_value": 1.604,
+                    "shap_value": -0.6477,
+                    "interpretation": "'tenure' is associated with lower predicted churn risk in the model (SHAP -0.6477)."
+                },
+                {
+                    "feature": "MonthlyCharges",
+                    "feature_value": -1.5096,
+                    "shap_value": -0.4574,
+                    "interpretation": "'MonthlyCharges' is associated with lower predicted churn risk in the model (SHAP -0.4574)."
+                },
+                {
+                    "feature": "Contract_Two year",
+                    "feature_value": 1.0,
+                    "shap_value": -0.3823,
+                    "interpretation": "'Contract_Two year' is associated with lower predicted churn risk in the model (SHAP -0.3823)."
+                },
+                {
+                    "feature": "OnlineSecurity_No",
+                    "feature_value": 0.0,
+                    "shap_value": -0.3132,
+                    "interpretation": "'OnlineSecurity_No' is associated with lower predicted churn risk in the model (SHAP -0.3132)."
+                }
+            ],
+            "human_readable_explanation": "Customer ID: 5787-KXGIY\nPredicted Churn Probability: 0.5%\nOfficial Decision Threshold: 0.30\nPrediction: Class 0 (Lower predicted churn risk)\nPresentation Risk Category: Low\n\nTop factors increasing predicted churn risk:\n  \u2022 gender (val = 1.0): SHAP contribution +0.0428\n  \u2022 Dependents (val = 0.0): SHAP contribution +0.0176\n  \u2022 MultipleLines_Yes (val = 0.0): SHAP contribution +0.0103\n\nTop factors reducing predicted churn risk:\n  \u2022 Contract_Month-to-month (val = 0.0): SHAP contribution -0.7700\n  \u2022 tenure (val = 1.604): SHAP contribution -0.6477\n  \u2022 MonthlyCharges (val = -1.5096): SHAP contribution -0.4574\n",
+            "retention_recommendations": [
+                "Conduct a routine customer satisfaction check-in and review usage plan tier."
+            ]
+        }
+    ],
+    "summary": "Phase 8 reusable inference pipeline successfully created and validated. Consistency test passed with max probability difference of 0.000050. Threshold locked at 0.30."
+}
